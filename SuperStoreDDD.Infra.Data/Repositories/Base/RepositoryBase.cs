@@ -1,47 +1,51 @@
+using Microsoft.EntityFrameworkCore;
 using SuperStoreDDD.Domain.Core.Interfaces;
 using SuperStoreDDD.Infra.Data.Context;
 
 namespace SuperStoreDDD.Infra.Data.Repositories.Base;
 
-public class RepositoryBase<TEntity, TId> : IRepository<TEntity, TId> where TEntity : class
+public class RepositoryBase<TEntity,TId> : IRepository<TEntity, TId>,
+                                           IDisposable
+                                           where TEntity : class 
+                                           where TId : struct 
+                                           
 {
-    public IUnitOfWork UnitOfWork { get; set; }
-    
-    protected readonly DataContext DbContext;
+    //public IUnitOfWork UnitOfWork;
+    private readonly DataContext dbContext;
 
-    public RepositoryBase(DataContext dbContext)
+    public RepositoryBase(IUnitOfWork unitOfWork, DataContext dbContext)
     {
-        DbContext = dbContext;
-    }
-    
-    public virtual async Task<IQueryable<TEntity>> ObterTodos()
-    {
-        throw new NotImplementedException();
+        //UnitOfWork = unitOfWork;
+        this.dbContext = dbContext;
     }
 
-    public async Task<TEntity> ObterPorID<TId>(TId id)
+    public TEntity Adicionar(TEntity entity)
     {
-        throw new NotImplementedException();
+        return dbContext.Set<TEntity>().Add(entity).Entity;
     }
 
-    public async Task<TEntity> Adicionar(TEntity entity)
+    public TEntity Atualizar(TEntity entity)
     {
-        // var obj = DbContext.Add(entity);
-        //
-        // await DbContext.SaveChangesAsync();
-        //
-        // return obj.Entity;
-
-        return await DbContext.Set<TEntity>().Add(entity);
+        dbContext.Entry<TEntity>(entity).State = EntityState.Modified;
+        return entity;
+    }
+    public void Remover(TEntity entity)
+    {
+        dbContext.Set<TEntity>().Remove(entity);
     }
 
-    public async Task Remover(TEntity entity)
+    public TEntity ObterPorID(TId id)
     {
-        throw new NotImplementedException();
+        return dbContext.Set<TEntity>().Find(id);
     }
 
-    public async Task<TEntity> Atualizar(TEntity entity)
+    public IEnumerable<TEntity> ObterTodos()
     {
-        throw new NotImplementedException();
+        return dbContext.Set<TEntity>().ToList();
+    }
+
+    public void Dispose()
+    {
+        dbContext.Dispose();
     }
 }
