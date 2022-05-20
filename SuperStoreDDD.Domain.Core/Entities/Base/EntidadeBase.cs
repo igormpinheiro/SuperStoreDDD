@@ -8,9 +8,11 @@ namespace SuperStoreDDD.Domain.Core.Entities.Base
 
         protected EntidadeBase(IdType id)
         {
-            Id = id;
-            //if(id.GetType() == typeof(Guid))
-            //    id = Guid.NewGuid();
+            var typeId = typeof(IdType);
+            if (typeId.IsValueType && typeId.IsPrimitive)
+                Id = id;
+            else
+                AddNotification("Id", "Id inválido");
         }
 
         protected EntidadeBase()
