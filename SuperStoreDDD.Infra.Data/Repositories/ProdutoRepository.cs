@@ -5,9 +5,9 @@ using SuperStoreDDD.Infra.Data.Repositories.Base;
 
 namespace SuperStoreDDD.Infra.Data.Repositories
 {
-    public class ClienteRepository : RepositoryBase<Cliente, int>
+    public class ProdutoRepository : RepositoryBase<Produto, int>
     {
-        public ClienteRepository(IUnitOfWork unitOfWork, DataContext dbContext) : base(unitOfWork, dbContext)
+        public ProdutoRepository(IUnitOfWork unitOfWork, DataContext dbContext) : base(unitOfWork, dbContext)
         {
         }
     }

@@ -5,9 +5,9 @@ using SuperStoreDDD.Infra.Data.Repositories.Base;
 
 namespace SuperStoreDDD.Infra.Data.Repositories
 {
-    public class ClienteRepository : RepositoryBase<Cliente, int>
+    public class CupomDescontoRepository : RepositoryBase<CupomDesconto, Guid>
     {
-        public ClienteRepository(IUnitOfWork unitOfWork, DataContext dbContext) : base(unitOfWork, dbContext)
+        public CupomDescontoRepository(IUnitOfWork unitOfWork, DataContext dbContext) : base(unitOfWork, dbContext)
         {
         }
     }

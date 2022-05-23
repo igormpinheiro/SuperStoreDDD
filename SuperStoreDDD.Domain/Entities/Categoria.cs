@@ -1,4 +1,6 @@
-﻿using SuperStoreDDD.Domain.Core.Entities;
+﻿using Flunt.Notifications;
+using Flunt.Validations;
+using SuperStoreDDD.Domain.Core.Entities;
 
 namespace SuperStoreDDD.Domain.Entities
 {
@@ -7,6 +9,11 @@ namespace SuperStoreDDD.Domain.Entities
         public string Denominacao { get; private set; }
         public IEnumerable<Produto> Produtos { get; private set; }
 
+        public Categoria(string denominacao)
+        {
+            Denominacao = denominacao;
+            Validar();
+        }
         public Categoria(string denominacao, IEnumerable<Produto> produtos)
         {
             Denominacao = denominacao;
@@ -16,7 +23,10 @@ namespace SuperStoreDDD.Domain.Entities
 
         protected override void Validar()
         {
-            throw new NotImplementedException();
+            AddNotifications(new Contract<Notification>()
+                .Requires()
+                .IsNullOrEmpty(Denominacao, "Nome", "Nome deve ser informado.")
+            );
         }
     }
 }
