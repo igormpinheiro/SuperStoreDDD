@@ -5,7 +5,7 @@ namespace SuperStoreDDD.Domain.Core.Entities
     public abstract class EntidadeAuditavel<IdType> : EntidadeBase<IdType> where IdType : struct
     {
         public string CriadoPor { get; private set; }
-        public DateTime DataCriacao { get; private set; }
+        public DateTime DataCadastro { get; private set; }
         public string ModificadoPor { get; private set; }
         public DateTime DataModificacao { get; private set; }
 
@@ -13,7 +13,7 @@ namespace SuperStoreDDD.Domain.Core.Entities
         public EntidadeAuditavel(string usuario) : base()
         {
             CriadoPor = usuario;
-            DataCriacao = DateTime.Now;
+            DataCadastro = DateTime.Now;
             ModificadoPor = usuario;
             DataModificacao = DateTime.Now;
         }

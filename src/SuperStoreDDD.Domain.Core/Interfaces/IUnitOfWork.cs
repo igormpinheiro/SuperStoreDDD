@@ -9,6 +9,6 @@ namespace SuperStoreDDD.Domain.Core.Interfaces
     public interface IUnitOfWork
     {
         Task<bool> Commit();
-        Task<bool> Rollback();
+        Task Rollback();
     }
 }

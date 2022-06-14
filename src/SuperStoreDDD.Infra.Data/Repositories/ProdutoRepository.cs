@@ -7,7 +7,7 @@ namespace SuperStoreDDD.Infra.Data.Repositories
 {
     public class ProdutoRepository : RepositoryBase<Produto, int>
     {
-        public ProdutoRepository(IUnitOfWork unitOfWork, DataContext dbContext) : base(unitOfWork, dbContext)
+        public ProdutoRepository(DataContext dbContext) : base(dbContext)
         {
         }
     }

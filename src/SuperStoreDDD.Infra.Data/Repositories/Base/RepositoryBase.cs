@@ -4,48 +4,48 @@ using SuperStoreDDD.Infra.Data.Context;
 
 namespace SuperStoreDDD.Infra.Data.Repositories.Base;
 
-public class RepositoryBase<TEntity,TId> : IRepository<TEntity, TId>,
+public class RepositoryBase<TEntity, TId> : IRepository<TEntity, TId>,
                                            IDisposable
-                                           where TEntity : class 
-                                           where TId : struct 
-                                           
-{
-    //public IUnitOfWork UnitOfWork;
-    private readonly DataContext dbContext;
+                                           where TEntity : class
+                                           where TId : struct
 
-    public RepositoryBase(IUnitOfWork unitOfWork, DataContext dbContext)
+{
+    public IUnitOfWork UnitOfWork => _context;
+    private readonly DataContext _context;
+
+    public RepositoryBase(DataContext dbContext)
     {
-        //UnitOfWork = unitOfWork;
-        this.dbContext = dbContext;
+        _context = dbContext;
     }
 
     public TEntity Adicionar(TEntity entity)
     {
-        return dbContext.Set<TEntity>().Add(entity).Entity;
+        return _context.Set<TEntity>().Add(entity).Entity;
     }
 
     public TEntity Atualizar(TEntity entity)
     {
-        dbContext.Entry<TEntity>(entity).State = EntityState.Modified;
+        _context.Entry<TEntity>(entity).State = EntityState.Modified;
         return entity;
     }
+
     public void Remover(TEntity entity)
     {
-        dbContext.Set<TEntity>().Remove(entity);
+        _context.Set<TEntity>().Remove(entity);
     }
 
-    public TEntity ObterPorID(TId id)
+    public async Task<TEntity> ObterPorID(TId id)
     {
-        return dbContext.Set<TEntity>().Find(id);
+        return await _context.Set<TEntity>().FindAsync(id);
     }
 
-    public IEnumerable<TEntity> ObterTodos()
+    public async Task<IEnumerable<TEntity>> ObterTodos()
     {
-        return dbContext.Set<TEntity>().ToList();
+        return await _context.Set<TEntity>().AsNoTracking().ToListAsync();
     }
 
     public void Dispose()
     {
-        dbContext.Dispose();
+        _context?.Dispose();
     }
 }

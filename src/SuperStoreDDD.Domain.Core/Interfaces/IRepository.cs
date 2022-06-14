@@ -2,13 +2,13 @@
 
 public interface IRepository<TEntity, in TId> where TEntity : class where TId : struct
 {
-    //IUnitOfWork UnitOfWork { get; }
-    IEnumerable<TEntity> ObterTodos();
-    TEntity ObterPorID(TId id);
+    IUnitOfWork UnitOfWork { get; }
+    Task<IEnumerable<TEntity>> ObterTodos();
+    Task<TEntity> ObterPorID(TId id);
     TEntity Adicionar(TEntity entity);
     void Remover(TEntity entity);
     TEntity Atualizar(TEntity entity);
-    void Dispose();
+    //void Dispose();
 
     //Task<IQueryable<TEntity>> ObterTodos();
     //Task<TEntity> ObterPorID<TId>(TId id);

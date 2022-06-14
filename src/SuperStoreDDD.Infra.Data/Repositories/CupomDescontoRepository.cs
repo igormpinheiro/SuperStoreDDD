@@ -7,7 +7,7 @@ namespace SuperStoreDDD.Infra.Data.Repositories
 {
     public class CupomDescontoRepository : RepositoryBase<CupomDesconto, Guid>
     {
-        public CupomDescontoRepository(IUnitOfWork unitOfWork, DataContext dbContext) : base(unitOfWork, dbContext)
+        public CupomDescontoRepository(DataContext dbContext) : base(dbContext)
         {
         }
     }

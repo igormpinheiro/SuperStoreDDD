@@ -7,7 +7,7 @@ namespace SuperStoreDDD.Infra.Data.Repositories
 {
     public class ClienteRepository : RepositoryBase<Cliente, int>
     {
-        public ClienteRepository(IUnitOfWork unitOfWork, DataContext dbContext) : base(unitOfWork, dbContext)
+        public ClienteRepository(DataContext dbContext) : base(dbContext)
         {
         }
     }
