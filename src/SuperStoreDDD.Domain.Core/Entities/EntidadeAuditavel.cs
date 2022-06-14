@@ -17,5 +17,8 @@ namespace SuperStoreDDD.Domain.Core.Entities
             ModificadoPor = usuario;
             DataModificacao = DateTime.Now;
         }
+
+        protected EntidadeAuditavel()
+        { }
     }
 }

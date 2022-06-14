@@ -6,15 +6,17 @@ namespace SuperStoreDDD.Domain.Entities
 {
     public class Categoria : Entidade<int>
     {
+        public int Codigo { get; private set; }
         public string Denominacao { get; private set; }
         public IEnumerable<Produto> Produtos { get; private set; }
 
-        public Categoria(string denominacao)
+        public Categoria(int codigo, string denominacao)
         {
+            Codigo = codigo;
             Denominacao = denominacao;
             Validar();
         }
-        public Categoria(string denominacao, IEnumerable<Produto> produtos)
+        public Categoria(int codigo, string denominacao, IEnumerable<Produto> produtos)
         {
             Denominacao = denominacao;
             Produtos = produtos;
@@ -25,8 +27,14 @@ namespace SuperStoreDDD.Domain.Entities
         {
             AddNotifications(new Contract<Notification>()
                 .Requires()
+                .IsLowerOrEqualsThan(Codigo, 0, "Código", "Código deve ser informado.")
                 .IsNullOrEmpty(Denominacao, "Nome", "Nome deve ser informado.")
             );
+        }
+
+        public override string ToString()
+        {
+            return "{Denominacao} - {Codigo}";
         }
     }
 }

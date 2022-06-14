@@ -20,6 +20,8 @@ namespace SuperStoreDDD.Domain.Core.Entities.Base
             Validar();
         }
 
+        protected abstract void Validar();
+
         #region BaseBehaviours
 
         public override bool Equals(object obj)
@@ -57,8 +59,6 @@ namespace SuperStoreDDD.Domain.Core.Entities.Base
         {
             return $"{GetType().Name} [Id={Id}]";
         }
-
-        protected abstract void Validar();
 
         #endregion BaseBehaviours
     }
