@@ -5,33 +5,33 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - WebUI", "0 - WebUI", "{5C9E1C2B-81E8-4B4F-BA34-CC5DE4A121C3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Services", "{53BEB91E-2B3E-4C21-B7C7-4590C75408D0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2- Services", "2- Services", "{53BEB91E-2B3E-4C21-B7C7-4590C75408D0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{495DCF7B-FD23-4D30-949C-06A1E543CD05}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{495DCF7B-FD23-4D30-949C-06A1E543CD05}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{F4030B34-76AB-40E9-936F-5CEE6032BABA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{06EEAF67-E25F-4E74-8735-AFFE9D72C0B7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Services.API", "SuperStoreDDD.Services.API\SuperStoreDDD.Services.API.csproj", "{605D1D97-967D-441F-8267-E11C6C84B273}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Services.API", "src\SuperStoreDDD.Services.API\SuperStoreDDD.Services.API.csproj", "{605D1D97-967D-441F-8267-E11C6C84B273}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Application", "SuperStoreDDD.Application\SuperStoreDDD.Application.csproj", "{4401B141-9CA5-44A9-AE20-120B6309ECFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Application", "src\SuperStoreDDD.Application\SuperStoreDDD.Application.csproj", "{4401B141-9CA5-44A9-AE20-120B6309ECFF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Domain", "SuperStoreDDD.Domain\SuperStoreDDD.Domain.csproj", "{0EBF893E-E374-4D0C-B3E1-7EE38C2E8B3B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Domain", "src\SuperStoreDDD.Domain\SuperStoreDDD.Domain.csproj", "{0EBF893E-E374-4D0C-B3E1-7EE38C2E8B3B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Domain.Core", "SuperStoreDDD.Domain.Core\SuperStoreDDD.Domain.Core.csproj", "{09DC52BF-7D27-4D74-B678-C652DAB3945B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Domain.Core", "src\SuperStoreDDD.Domain.Core\SuperStoreDDD.Domain.Core.csproj", "{09DC52BF-7D27-4D74-B678-C652DAB3945B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Infra.Data", "SuperStoreDDD.Infra.Data\SuperStoreDDD.Infra.Data.csproj", "{A4DEEA33-6E56-428C-B262-B80499FB7AB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Infra.Data", "src\SuperStoreDDD.Infra.Data\SuperStoreDDD.Infra.Data.csproj", "{A4DEEA33-6E56-428C-B262-B80499FB7AB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Infra.CrossCutting", "SuperStoreDDD.Infra.CrossCutting\SuperStoreDDD.Infra.CrossCutting.csproj", "{2AF74C4C-11A4-4D00-9CD2-DF22D4BB8F2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Infra.CrossCutting", "src\SuperStoreDDD.Infra.CrossCutting\SuperStoreDDD.Infra.CrossCutting.csproj", "{2AF74C4C-11A4-4D00-9CD2-DF22D4BB8F2F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Infra.Identity", "SuperStoreDDD.Infra.Identity\SuperStoreDDD.Infra.Identity.csproj", "{ACD9FE1A-7615-42CD-96A1-1237BACC26F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Infra.Identity", "src\SuperStoreDDD.Infra.Identity\SuperStoreDDD.Infra.Identity.csproj", "{ACD9FE1A-7615-42CD-96A1-1237BACC26F8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Tests", "5 - Tests", "{22B54988-E6DC-4566-98AF-240273DE24A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperStoreDDD.Domain.Test", "SuperStoreDDD.Domain.Test\SuperStoreDDD.Domain.Test.csproj", "{A091BA06-2C1E-4D28-862C-FD3919CD7483}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Domain.Test", "tests\SuperStoreDDD.Domain.Test\SuperStoreDDD.Domain.Test.csproj", "{A091BA06-2C1E-4D28-862C-FD3919CD7483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperStoreDDD.Domain.Core.Test", "SuperStoreDDD.Domain.Core.Test\SuperStoreDDD.Domain.Core.Test.csproj", "{C39A8241-531B-4DCC-8C87-74EF3C1D8574}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperStoreDDD.Domain.Core.Test", "tests\SuperStoreDDD.Domain.Core.Test\SuperStoreDDD.Domain.Core.Test.csproj", "{C39A8241-531B-4DCC-8C87-74EF3C1D8574}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
